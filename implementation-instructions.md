@@ -3,6 +3,8 @@
 This document outlines the step-by-step implementation of the API specified in `spec.md`. Each section represents a single development iteration, following Test-Driven Development principles.
 
 ## Iteration 1: Project Setup and Basic Structure
+**Status**
+Completed
 
 **What we'll implement:**
 - Initialize a Spring Boot project with Gradle
@@ -29,6 +31,8 @@ This document outlines the step-by-step implementation of the API specified in `
 - Configured logback for structured JSON logging
 
 ## Iteration 2: User Repository Layer
+**Status**
+Not started
 
 **What we'll implement:**
 - Create the MongoDB repository for User entities
@@ -42,6 +46,8 @@ This document outlines the step-by-step implementation of the API specified in `
 4. Configure test environment with mocked MongoDB
 
 ## Iteration 3: User Service Layer
+**Status**
+Not started
 
 **What we'll implement:**
 - Create the service layer for handling business logic
@@ -56,6 +62,8 @@ This document outlines the step-by-step implementation of the API specified in `
 4. Write comprehensive tests for the service layer using Mockito
 
 ## Iteration 4: User Controller - Read Operations
+**Status**
+Not started
 
 **What we'll implement:**
 - Create the REST controller for User endpoints
@@ -70,6 +78,8 @@ This document outlines the step-by-step implementation of the API specified in `
 4. Write tests for the controller endpoints
 
 ## Iteration 5: User Controller - Write Operations
+**Status**
+Not started
 
 **What we'll implement:**
 - Implement POST endpoint for creating users
@@ -83,6 +93,8 @@ This document outlines the step-by-step implementation of the API specified in `
 4. Write tests for create operations
 
 ## Iteration 6: User Controller - Update Operations
+**Status**
+Not started
 
 **What we'll implement:**
 - Implement PUT endpoint for full user updates
@@ -96,6 +108,8 @@ This document outlines the step-by-step implementation of the API specified in `
 4. Write tests for both update operations
 
 ## Iteration 7: User Controller - Delete Operation
+**Status**
+Not started
 
 **What we'll implement:**
 - Implement DELETE endpoint for removing users
@@ -107,6 +121,8 @@ This document outlines the step-by-step implementation of the API specified in `
 3. Write tests for delete operation
 
 ## Iteration 8: API Documentation and Logging
+**Status**
+Not started
 
 **What we'll implement:**
 - Add OpenAPI documentation using Springdoc
@@ -121,6 +137,8 @@ This document outlines the step-by-step implementation of the API specified in `
 5. Implement request/response logging
 
 ## Iteration 9: Final Integration Tests and Polish
+**Status**
+Not started
 
 **What we'll implement:**
 - Comprehensive integration tests
