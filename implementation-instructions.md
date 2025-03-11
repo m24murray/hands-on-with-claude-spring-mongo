@@ -2,8 +2,35 @@
 
 This document outlines the step-by-step implementation of the API specified in `spec.md`. Each section represents a single development iteration, following Test-Driven Development principles.
 
+## Important Notes
+
+- After completing each iteration, we will stop to manually test and evaluate the implementation before proceeding to the next iteration.
+- Each iteration must be fully tested and functional before moving on.
+- You should keep the project's README file up to date at all times.
+
+## Cost-Effective Prompting Guidelines
+
+- Be specific with requests, including exact file paths and line numbers when applicable
+- Group related changes in a single prompt (e.g., "Implement User model and repository" rather than two separate prompts)
+- Use short, focused prompts that specify exactly what you need
+- For search operations, use specific patterns rather than open-ended searches
+- Provide necessary context upfront rather than through multiple back-and-forth exchanges
+- Skip explanations of standard patterns when you already understand them
+- Use the sample prompts provided in each iteration as templates
+- Reference the Common Commands section at the end rather than asking about build/test commands
+
+### Creating a CLAUDE.md File
+
+For even more efficiency, create a CLAUDE.md file in the project root with:
+- Common commands and their explanations
+- Project structure overview
+- Coding conventions specific to this project
+- Links to relevant documentation
+
+This file will be automatically loaded into Claude's context in each session, reducing the need to re-explain project specifics.
+
 ## Iteration 1: Project Setup and Basic Structure
-**Status**
+**Status:**  
 Completed
 
 **What we'll implement:**
@@ -31,8 +58,7 @@ Completed
 - Configured logback for structured JSON logging
 
 ## Iteration 2: User Repository Layer
-**Status**
-Not started
+**Status**: Completed
 
 **What we'll implement:**
 - Create the MongoDB repository for User entities
@@ -45,9 +71,23 @@ Not started
 3. Write tests for basic CRUD operations and custom methods
 4. Configure test environment with mocked MongoDB
 
+**Completed Implementation:**
+- Created UserRepository interface extending MongoRepository<User, UUID>
+- Added methods for case-insensitive email matching:
+  - findByEmailIgnoreCase() to find users by email regardless of case
+  - existsByEmailIgnoreCase() to check if an email already exists
+- Created custom repository interface and implementation for specialized operations:
+  - isEmailUnique() to verify email uniqueness with an option to exclude a specific user
+  - findByExactEmail() for exact case-sensitive email matching
+- Wrote comprehensive test cases:
+  - Unit tests for the custom repository implementation
+  - Integration tests for the repository interface methods
+  - Used Mockito to mock MongoDB interactions
+
+**Actual cost:** $0.30
+
 ## Iteration 3: User Service Layer
-**Status**
-Not started
+**Status**: Completed
 
 **What we'll implement:**
 - Create the service layer for handling business logic
@@ -61,92 +101,181 @@ Not started
 3. Add validation logic for user data
 4. Write comprehensive tests for the service layer using Mockito
 
+**Completed Implementation:**
+- Created a set of common exceptions for error handling:
+  - ResourceNotFoundException for when requested resources don't exist
+  - DuplicateResourceException for email uniqueness violations
+  - BadRequestException for invalid input data
+- Created UserService interface with well-defined operations:
+  - getUserById(), getAllUsers(), createUser()
+  - updateUser(), patchUser(), deleteUser()
+  - existsByEmail(), getUserByEmail()
+- Implemented UserServiceImpl with:
+  - Proper validation of inputs
+  - Email uniqueness checks
+  - Structured error handling
+  - Logging for all operations
+- Wrote comprehensive tests covering:
+  - All successful operations
+  - Edge cases and error conditions
+  - Validation logic
+  - Email uniqueness constraints
+
+**Actual cost:** $0.40
+
 ## Iteration 4: User Controller - Read Operations
-**Status**
-Not started
+**Status**: Completed
 
 **What we'll implement:**
 - Create the REST controller for User endpoints
 - Implement GET endpoint for retrieving users by ID
+- Implement GET endpoint for retrieving all users or search by email
 - Set up error handling for common scenarios
 - Write unit and integration tests
 
 **Development tasks:**
 1. Create UserController with proper request mapping
 2. Implement GET by ID endpoint
-3. Add error handling for user not found scenarios
-4. Write tests for the controller endpoints
+3. Implement GET all users endpoint with optional email search
+4. Add error handling for user not found scenarios
+5. Write tests for the controller endpoints
 
-## Iteration 5: User Controller - Write Operations
-**Status**
-Not started
+**Completed Implementation:**
+- Created UserController with base path `/api/v1/users`
+- Implemented REST-compliant endpoints:
+  - `GET /api/v1/users/{id}` to retrieve a user by ID
+  - `GET /api/v1/users` to retrieve all users
+  - `GET /api/v1/users?email=...` to search for a user by email
+- Added proper exception handling for 404 Not Found scenarios
+- Documented API with OpenAPI annotations for Swagger
+- Implemented comprehensive tests:
+  - Unit tests for all endpoints using MockMvc
+  - Integration tests to verify endpoint behavior
+  - Test cases for both success and error scenarios
 
-**What we'll implement:**
-- Implement POST endpoint for creating users
-- Add validation for incoming requests
-- Write tests for create operations
+**Actual cost:** $0.35
 
-**Development tasks:**
-1. Implement POST endpoint in UserController
-2. Add request validation using Bean Validation
-3. Handle duplicate email errors
-4. Write tests for create operations
-
-## Iteration 6: User Controller - Update Operations
-**Status**
-Not started
-
-**What we'll implement:**
-- Implement PUT endpoint for full user updates
-- Implement PATCH endpoint for partial user updates
-- Write tests for update operations
-
-**Development tasks:**
-1. Implement PUT endpoint for full updates
-2. Implement PATCH endpoint using JSONPatch or custom logic
-3. Ensure validation is applied to updates
-4. Write tests for both update operations
-
-## Iteration 7: User Controller - Delete Operation
-**Status**
-Not started
+## Iteration 5: User Controller - Write & Update Operations
+**Status**:  
+Completed
 
 **What we'll implement:**
-- Implement DELETE endpoint for removing users
-- Write tests for delete operation
+- POST endpoint for creating users
+- PUT endpoint for full updates
+- PATCH endpoint for partial updates 
+- Common validation for all write operations
 
 **Development tasks:**
-1. Implement DELETE endpoint
-2. Add proper response handling for successful deletion
-3. Write tests for delete operation
+1. Implement POST, PUT, and PATCH endpoints in UserController
+2. Add consistent request validation using Bean Validation
+3. Handle duplicate email errors and validation failures
+4. Write focused tests for all operations
 
-## Iteration 8: API Documentation and Logging
-**Status**
-Not started
+**Sample prompt:**
+"Implement POST endpoint in UserController.java to create new users. Include validation for email format and uniqueness. Add unit tests in UserControllerTest.java."
+
+**Completed Implementation:**
+- Added POST endpoint for creating users with proper validation
+- Implemented PUT endpoint for full user updates
+- Added PATCH endpoint for partial user updates
+- Created customized ObjectMapper for proper ObjectId serialization
+- Added comprehensive test cases for all endpoints
+- Implemented proper HTTP status codes and error responses
+- Properly documented endpoints with OpenAPI annotations
+
+**Actual cost:** $0.30
+
+## Iteration 6: User Controller - Delete Operation
+**Status**:  
+Completed
 
 **What we'll implement:**
-- Add OpenAPI documentation using Springdoc
-- Configure Logback for JSON structured logging
-- Add request/response logging
+- DELETE endpoint for removing users
+- Proper HTTP status code handling
 
 **Development tasks:**
-1. Add Springdoc OpenAPI dependencies
-2. Configure Swagger UI
-3. Add API documentation annotations
-4. Configure Logback for JSON logging
-5. Implement request/response logging
+1. Implement DELETE endpoint with proper error handling
+2. Write focused tests for delete operation
 
-## Iteration 9: Final Integration Tests and Polish
-**Status**
-Not started
+**Sample prompt:**
+"Add DELETE endpoint to UserController.java for removing users by ID. Return 204 on success, 404 if user not found."
+
+**Completed Implementation:**
+- Implemented DELETE endpoint with proper HTTP status codes
+- Added comprehensive test cases for the endpoint
+- Properly documented the endpoint with OpenAPI annotations
+- Ensured proper validation and error handling
+
+**Actual cost:** $0.20
+
+## Iteration 7: API Documentation, Logging & Final Polish
+**Status**:  
+Completed
 
 **What we'll implement:**
-- Comprehensive integration tests
-- Code cleanup and refactoring
-- Final validation against specification requirements
+- OpenAPI documentation with Springdoc
+- JSON structured logging
+- Final integration tests and cleanup
 
 **Development tasks:**
-1. Write end-to-end integration tests
-2. Review and refactor code as needed
-3. Verify all specification requirements are met
-4. Final testing and documentation review
+1. Configure Springdoc OpenAPI and add annotations
+2. Set up JSON logging and request/response tracking
+3. Add comprehensive integration tests
+4. Verify specification requirements
+
+**Completed Implementation:**
+- Configured OpenAPI documentation with Springdoc and interactive Swagger UI
+- Added detailed OpenAPI annotations to all controller endpoints
+- Implemented request/response logging for debugging with a custom filter
+- Set up structured JSON logging with Logback
+- Verified our implementation against all specification requirements
+- Updated the README with complete documentation of the API
+- Ensured the codebase follows the package-by-feature structure
+
+**Actual cost:** $0.25
+
+## Common Commands Reference
+```
+# Run tests
+./gradlew test
+
+# Run specific test class
+./gradlew test --tests "com.example.userservice.user.controller.UserControllerTest"
+
+# Build the project
+./gradlew build
+
+# Run the application
+./gradlew bootRun
+```
+
+## Sample CLAUDE.md Content
+```markdown
+# Project Reference
+
+## Common Commands
+- Build: `./gradlew build`
+- Run tests: `./gradlew test`
+- Run specific test: `./gradlew test --tests "com.example.userservice.user.controller.UserControllerTest"`
+- Run application: `./gradlew bootRun`
+
+## Project Structure
+- Controller layer: `src/main/java/com/example/userservice/user/controller/`
+- Service layer: `src/main/java/com/example/userservice/user/service/`
+- Repository layer: `src/main/java/com/example/userservice/user/repository/`
+- Model classes: `src/main/java/com/example/userservice/user/model/`
+- Exception handling: `src/main/java/com/example/userservice/common/exception/`
+
+## Coding Conventions
+- Use Lombok annotations to reduce boilerplate
+- Controller methods return ResponseEntity<?>
+- Service methods throw specific exceptions rather than returning null
+- Repository methods follow Spring Data naming conventions
+- Tests follow given/when/then pattern
+
+## Key Files
+- User model: `src/main/java/com/example/userservice/user/model/User.java`
+- Main controller: `src/main/java/com/example/userservice/user/controller/UserController.java`
+- Service interface: `src/main/java/com/example/userservice/user/service/UserService.java`
+- Main config: `src/main/resources/application.yml`
+```

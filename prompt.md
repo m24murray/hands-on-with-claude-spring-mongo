@@ -1,5 +1,5 @@
 There is a file in this codebase called spec.md
-that include a detailed specification for a java spring app that I want to build.
+that includes a detailed specification for a java spring app that I want to build.
 I want you to break it down into small, iterative pieces that you can implement.
 
 Some rules:
@@ -11,5 +11,5 @@ Some rules:
 At each stage of the journey I want you to update a file called implementation-instructions.md
 with the following information
 * A set of detailed prompts of what you are about to implement.
-* Whether the iteration is completed or not
+* The current status of the iteration (Not started, In progress, Completed)
 * Rough costs of implementing that iteration

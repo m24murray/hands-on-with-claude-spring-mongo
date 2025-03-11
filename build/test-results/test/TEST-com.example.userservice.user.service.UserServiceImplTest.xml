@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.userservice.user.service.UserServiceImplTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2025-03-11T11:09:48.355Z" hostname="CaoileannsMac.local" time="0.04">
+  <properties/>
+  <testcase name="patchUserShouldPartiallyUpdateAndReturnUser()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.005"/>
+  <testcase name="patchUserShouldThrowExceptionWhenNameEmpty()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.002"/>
+  <testcase name="patchUserShouldThrowExceptionWhenFieldsEmpty()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="deleteUserShouldThrowExceptionWhenUserNotFound()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.002"/>
+  <testcase name="patchUserShouldThrowExceptionWhenEmailExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.003"/>
+  <testcase name="patchUserShouldThrowExceptionWhenNameNull()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="getUserByEmailShouldThrowExceptionWhenEmailEmpty()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="getUserByEmailShouldReturnUserWhenExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="updateUserShouldThrowExceptionWhenEmailExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="getUserByEmailShouldThrowExceptionWhenNotFound()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="getUserByIdShouldThrowExceptionWhenNotFound()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="deleteUserShouldRemoveUser()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="updateUserShouldThrowExceptionWhenUserNotFound()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="patchUserShouldThrowExceptionWhenUserNotFound()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="createUserShouldThrowExceptionWhenUserIsNull()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="existsByEmailShouldReturnTrueWhenExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="updateUserShouldUpdateAndReturnUser()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="updateUserShouldNotCheckEmailWhenUnchanged()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="createUserShouldSaveAndReturnUser()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.003"/>
+  <testcase name="createUserShouldThrowExceptionWhenEmailExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.002"/>
+  <testcase name="getUserByIdShouldReturnUserWhenExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="existsByEmailShouldReturnFalseWhenNotExists()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <testcase name="getAllUsersShouldReturnListOfUsers()" classname="com.example.userservice.user.service.UserServiceImplTest" time="0.001"/>
+  <system-out><![CDATA[{"@timestamp":"2025-03-11T11:09:48.360044Z","@version":"1","message":"Partially updating user with ID: 67d019fcc36706352cdf2147","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.362907Z","@version":"1","message":"Partially updating user with ID: 67d019fcc36706352cdf2148","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.36637Z","@version":"1","message":"Deleting user with ID: 67d019fcc36706352cdf214a","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.369669Z","@version":"1","message":"Partially updating user with ID: 67d019fcc36706352cdf214b","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.371887Z","@version":"1","message":"Partially updating user with ID: 67d019fcc36706352cdf214c","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.374349Z","@version":"1","message":"Getting user with email: john.doe@example.com","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.375953Z","@version":"1","message":"Updating user with ID: 67d019fcc36706352cdf214f","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.377622Z","@version":"1","message":"Getting user with email: nonexistent@example.com","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.378933Z","@version":"1","message":"Getting user with ID: 67d019fcc36706352cdf2151","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.380208Z","@version":"1","message":"Deleting user with ID: 67d019fcc36706352cdf2152","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.381545Z","@version":"1","message":"Updating user with ID: 67d019fcc36706352cdf2153","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.38285Z","@version":"1","message":"Partially updating user with ID: 67d019fcc36706352cdf2154","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.386234Z","@version":"1","message":"Updating user with ID: 67d019fcc36706352cdf2157","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.387745Z","@version":"1","message":"Updating user with ID: 67d019fcc36706352cdf2158","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.389251Z","@version":"1","message":"Creating new user with email: new.user@example.com","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.392543Z","@version":"1","message":"Creating new user with email: existing@example.com","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.393845Z","@version":"1","message":"Getting user with ID: 67d019fcc36706352cdf215b","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+{"@timestamp":"2025-03-11T11:09:48.396189Z","@version":"1","message":"Getting all users","logger_name":"com.example.userservice.user.service.UserServiceImpl","thread_name":"Test worker","level":"DEBUG","level_value":10000}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

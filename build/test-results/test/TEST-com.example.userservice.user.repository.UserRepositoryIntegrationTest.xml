@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.userservice.user.repository.UserRepositoryIntegrationTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-03-11T11:09:48.052Z" hostname="CaoileannsMac.local" time="0.053">
+  <properties/>
+  <testcase name="findByEmailIgnoreCaseShouldHandleDifferentCase()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.047"/>
+  <testcase name="findAllShouldReturnAllUsers()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.001"/>
+  <testcase name="findByEmailIgnoreCaseShouldReturnUserWhenExists()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.0"/>
+  <testcase name="findByIdShouldReturnUserWhenExists()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.0"/>
+  <testcase name="findByIdShouldReturnEmptyWhenNotFound()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.001"/>
+  <testcase name="deleteShouldRemoveUser()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.001"/>
+  <testcase name="existsByEmailIgnoreCaseShouldReturnFalseWhenNotExists()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.001"/>
+  <testcase name="existsByEmailIgnoreCaseShouldReturnTrueWhenExists()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.0"/>
+  <testcase name="saveShouldPersistUser()" classname="com.example.userservice.user.repository.UserRepositoryIntegrationTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

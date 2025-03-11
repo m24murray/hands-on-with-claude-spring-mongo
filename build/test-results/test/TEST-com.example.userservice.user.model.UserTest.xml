@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.userservice.user.model.UserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-07T16:14:35.811Z" hostname="CaoileannsMac.local" time="0.152">
+<testsuite name="com.example.userservice.user.model.UserTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-03-11T11:09:48.022Z" hostname="CaoileannsMac.local" time="0.027">
   <properties/>
-  <testcase name="shouldRejectEmptyName()" classname="com.example.userservice.user.model.UserTest" time="0.152"/>
-  <system-out><![CDATA[16:14:35.868 [Test worker] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 8.0.1.Final
-]]></system-out>
+  <testcase name="shouldRejectLongName()" classname="com.example.userservice.user.model.UserTest" time="0.008"/>
+  <testcase name="shouldTrimNameAndEmail()" classname="com.example.userservice.user.model.UserTest" time="0.001"/>
+  <testcase name="shouldRejectInvalidEmail()" classname="com.example.userservice.user.model.UserTest" time="0.002"/>
+  <testcase name="shouldRejectShortName()" classname="com.example.userservice.user.model.UserTest" time="0.003"/>
+  <testcase name="shouldRejectEmptyName()" classname="com.example.userservice.user.model.UserTest" time="0.003"/>
+  <testcase name="shouldCreateValidUser()" classname="com.example.userservice.user.model.UserTest" time="0.003"/>
+  <testcase name="shouldConvertEmailToLowercase()" classname="com.example.userservice.user.model.UserTest" time="0.001"/>
+  <testcase name="shouldRejectEmptyEmail()" classname="com.example.userservice.user.model.UserTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -40,5 +40,6 @@ logging:
     root: INFO
     com.example: DEBUG
     org.springframework.data.mongodb: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

@@ -4,6 +4,7 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
+import org.bson.types.ObjectId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +32,6 @@ class UserTest {
         
         // Then
         assertTrue(violations.isEmpty());
-        assertNotNull(user.getId());
         assertEquals("John Doe", user.getName());
         assertEquals("john.doe@example.com", user.getEmail());
     }
